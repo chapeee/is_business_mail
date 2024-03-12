@@ -1,6 +1,6 @@
 {
-  "name": "@myselfraj/is-business-mailw",
-  "version": "1.0.10",
+  "name": "@myselfraj/is-business-mail",
+  "version": "1.0.11",
   "description": "Checks if an email is a business email from a list of 15,000 emails.",
   "main": "dist/is-business-mail.js",
   "types": "dist/is-business-mail.d.ts", 
@@ -30,5 +30,17 @@
     "typescript": "^5.4.2",
     "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chapeee/is_business_mail"
+},
+"homepage": "https://github.com/chapeee/is_business_mail#readme",
+"keywords": [
+ "verify-emails",
+ "verify",
+ "business-emails",
+ "email-validation",
+ "public-email-list"
+]
 }
