@@ -14,16 +14,20 @@ npm i @myselfraj/is-business-mail
 
 ``` bash
 const {isBusinessMail } = require('@myselfraj/is-business-mail')
-console.log(isBusinessMail('test@grapdevs.com')) //returns boolean
+console.log(isBusinessMail('test@grapdevs.com')) //returns boolean (true)
 
  ----------------------or -----------------------
 
  import {isBusinessMail } from '@myselfraj/is-business-mail'
- console.log(isBusinessMail('test@grapdevs.com')) //returns boolean
+ console.log(isBusinessMail('test@myselfraj.com')) //returns boolean (true)
 ```
 
-## Classic Script
 
-``` bash
-<script src=''></script>
-```
+
+## Authors
+
+- [@chapeee](https://github.com/chapeee/)
+
+
+## Connect with me
+[LinkedIn](https://www.linkedin.com/in/myselfraj/)

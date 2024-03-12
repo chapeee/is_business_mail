@@ -1,6 +1,6 @@
 {
   "name": "@myselfraj/is-business-mailw",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Checks if an email is a business email from a list of 15,000 emails.",
   "main": "dist/is-business-mail.js",
   "types": "dist/is-business-mail.d.ts", 
