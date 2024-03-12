@@ -22,4 +22,8 @@ console.log(isBusinessMail('test@grapdevs.com')) //returns boolean
  console.log(isBusinessMail('test@grapdevs.com')) //returns boolean
 ```
 
+## Classic Script
 
+``` bash
+<script src=''></script>
+```
