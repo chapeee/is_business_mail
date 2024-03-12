@@ -1,13 +1,19 @@
 {
-  "name": "@myselfraj/is-business-mail",
-  "version": "1.0.1023",
+  "name": "@myselfraj/is-business-mailw",
+  "version": "1.0.9",
   "description": "Checks if an email is a business email from a list of 15,000 emails.",
-  "main": "dist/bundle.js",
+  "main": "dist/is-business-mail.js",
+  "types": "dist/is-business-mail.d.ts", 
+  "files": [
+    "dist/*.js",
+    "dist/*.d.ts"
+  ],
   "scripts": {
     "clean": "rimraf dist",
     "build": "webpack",
-    "publish": "npm run build && npm publish",
-    "publish-ver": "npm run clean && npm run build && npm publish --registry http://localhost:4873"
+    "publish": "npm run build",
+    "publish-ver": "npm run clean && npm run build && npm publish --registry http://localhost:4873",
+    "postbuild": "node rename-declarations.js"
   },
   "author": "grapdevs",
   "license": "ISC",

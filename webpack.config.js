@@ -5,11 +5,11 @@ module.exports = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'is-business-mail.js',
     libraryTarget: 'commonjs'
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js','.d.ts']
   },
   module: {
     rules: [

@@ -9,8 +9,8 @@
   "author": "grapdevs",
   "license": "ISC",
   "dependencies": {
-    "@myselfraj/is-business-mail": "^1.0.1023",
-    "superheroes": "^3.0.0",
+    "@myselfraj/is-business-mail": "^1.0.6",
+    "@myselfraj/is-business-mailw": "^1.0.9",
     "ts-node": "^10.9.2"
   }
 }
