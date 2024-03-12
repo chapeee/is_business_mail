@@ -1,0 +1,28 @@
+{
+  "name": "@myselfraj/is-business-mail",
+  "version": "1.0.1023",
+  "description": "Checks if an email is a business email from a list of 15,000 emails.",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "webpack",
+    "publish": "npm run build && npm publish",
+    "publish-ver": "npm run clean && npm run build && npm publish --registry http://localhost:4873"
+  },
+  "author": "grapdevs",
+  "license": "ISC",
+  "dependencies": {
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.12.1",
+    "rollup-plugin-typescript": "^1.0.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.2",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  }
+}
