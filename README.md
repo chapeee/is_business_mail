@@ -33,19 +33,86 @@ npm i @myselfraj/is-business-mail
 
 ## Usage
 
-```bash
-import {isBusinessMail } from '@myselfraj/is-business-mail'
-console.log(isBusinessMail('test@myselfraj.com')) //returns => true  (it is business mail)
-console.log(isBusinessMail('test@somebusines.com')) //returns => true  (it is business mail)
+### Quick Start (boolean)
 
-console.log(isBusinessMail('test@gmail.com')) //returns => false  (not business mail)
-console.log(isBusinessMail('test@orkut.com')) //returns => false  (not business mail)
-console.log(isBusinessMail('abc@orkut.com')) //returns => false  (not business mail)
+```ts
+import { isBusinessMail } from '@myselfraj/is-business-mail';
+
+console.log(isBusinessMail('test@myselfraj.com'));   // true  (business mail)
+console.log(isBusinessMail('test@somebusines.com')); // true  (business mail)
+console.log(isBusinessMail('test@gmail.com'));       // false (public provider)
+console.log(isBusinessMail('test@orkut.com'));       // false (public provider)
+console.log(isBusinessMail('abc@orkut.com'));        // false (public provider)
+```
+
+### Rich Analysis (detailed)
+
+```ts
+import { analyzeEmail, type EmailAnalysis } from '@myselfraj/is-business-mail';
+
+const res: EmailAnalysis = analyzeEmail('updates@gmail.com');
+console.log(res);
+/*
+{
+  input: 'updates@gmail.com',
+  valid: true,
+  local: 'updates',
+  domain: 'gmail.com',
+  rootDomain: 'gmail.com',
+  tld: 'com',
+  isBusiness: false,
+  isDisposable: false,
+  isRoleAccount: true,
+  isFreeProvider: true
+}
+*/
+```
+
+Fields returned by analyzeEmail:
+- input: normalized input string
+- valid: basic format check for local@domain
+- local: local part of the address
+- domain: extracted domain
+- rootDomain: second‑level + TLD (e.g., example.com)
+- tld: top‑level domain (e.g., com)
+- isBusiness: true if not in our public email provider list
+- isDisposable: true if domain looks disposable/temporary
+- isRoleAccount: true if local looks like a role (e.g., support, updates, ceo)
+- isFreeProvider: true if domain is a common free provider (e.g., gmail.com)
+
+### Custom Role Accounts (optional)
+
+You can extend the built‑in role list per call:
+
+```ts
+import { analyzeEmail } from '@myselfraj/is-business-mail';
+
+const res = analyzeEmail('devops@yourco.com', {
+  additionalRoleLocalParts: ['devops', 'noreply']
+});
+console.log(res.isRoleAccount); // true
+```
+
+Role matching normalization:
+- strips anything after “+” in the local part
+- removes dots, hyphens, and underscores
+- lowercases before comparison
+
+So “Dev-Ops+alerts@yourco.com” matches “devops”.
+
+### Node CommonJS
+
+```js
+const { isBusinessMail, analyzeEmail } = require('@myselfraj/is-business-mail');
+console.log(isBusinessMail('name@company.com'));
 ```
 
 ## Method
 
 isBusinessMail() =>  Accept email of string type and return boolean
+
+analyzeEmail(email, options?) =>  Returns a rich object with detailed flags  
+- options.additionalRoleLocalParts?: string[]
 
 ## Authors
 

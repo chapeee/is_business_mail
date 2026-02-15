@@ -12,15 +12,6 @@ console.log("isBusinessMail(grapdevs.com):", isBusinessMail("test@grapdevs.com")
 const samples = ["updates@gmail.com", "falak@grapdevs.com"];
 
 for (const email of samples) {
-  const res: EmailAnalysis = analyzeEmail(email, {
-    additionalRoleLocalParts: ["devops", "noreply"]
-  });
-  console.log(email, {
-    isBusiness: res.isBusiness,
-    isDisposable: res.isDisposable,
-    isRoleAccount: res.isRoleAccount,
-    isFreeProvider: res.isFreeProvider,
-    domain: res.domain,
-    tld: res.tld,
-  });
+  const res: EmailAnalysis = analyzeEmail(email);
+  console.log(email, res);
 }
