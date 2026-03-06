@@ -1,0 +1,21 @@
+export const freeProviderDomains: string[] = [
+  "gmail.com",
+  "yahoo.com",
+  "yahoo.co.uk",
+  "outlook.com",
+  "hotmail.com",
+  "live.com",
+  "msn.com",
+  "icloud.com",
+  "me.com",
+  "aol.com",
+  "protonmail.com",
+  "pm.me",
+  "gmx.com",
+  "yandex.com",
+  "yandex.ru",
+  "zoho.com",
+  "mail.com",
+  "fastmail.com",
+  "hey.com"
+];
