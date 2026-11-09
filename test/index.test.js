@@ -97,3 +97,9 @@ test("legitimate business domains stay business", () => {
     assert.equal(isBusinessMail(e), true, e);
   }
 });
+
+test("common role mailboxes are detected (README examples)", () => {
+  for (const l of ["support", "Info", "sales", "admin", "contact", "no-reply", "noreply", "billing", "hr", "updates", "ceo"]) {
+    assert.equal(analyzeEmail(`${l}@yourco.com`).isRoleAccount, true, l);
+  }
+});
