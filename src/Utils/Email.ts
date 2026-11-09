@@ -16346,5 +16346,10 @@ export const listofEmails = [
   "zzz.pl",
   "fryshare.com",
   "38g8ugz.cashbenties.com",
-  "l7acb09.cse445.com"
+  "l7acb09.cse445.com",
+  // Added: well-known public providers missing from the original list
+  "orkut.com",
+  "proton.me",
+  "zohomail.com",
+  "skiff.com"
 ];

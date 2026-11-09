@@ -1,8 +1,8 @@
 ## Is Business E-mail?
 
-Checks if an email is a business email from a list of 15,000 emails.
+Checks if an email is a business email against a list of 16,000+ public, free and disposable email providers.
 
-Our package is quite simple: it has a list of more than 15,000 email providers list that are used by the public. When you give us an email, we just look if it's in our list. If it is in the list, that means it's a regular public email(eg. gmail.com, yahoo.com, outlook.com, and etc 15k+) not a business one. For example, if you give us "xyz@gmail.com", it's not a business email. It's just normal check. It's not email Auth or SMTP verification tool. 
+Our package is quite simple: it has a list of more than 16,000 email providers list that are used by the public. When you give us an email, we just look if it's in our list. If it is in the list, that means it's a regular public email(eg. gmail.com, yahoo.com, outlook.com, and etc 15k+) not a business one. For example, if you give us "xyz@gmail.com", it's not a business email. It's just normal check. It's not email Auth or SMTP verification tool. 
 
 ## What is Public Email? 
 
@@ -72,10 +72,10 @@ Fields returned by analyzeEmail:
 - input: normalized input string
 - valid: basic format check for local@domain
 - local: local part of the address
-- domain: extracted domain
-- rootDomain: second‑level + TLD (e.g., example.com)
+- domain: extracted domain, lowercased (trailing dot removed)
+- rootDomain: registrable domain (e.g., example.com, example.co.uk)
 - tld: top‑level domain (e.g., com)
-- isBusiness: true if not in our public email provider list
+- isBusiness: true if valid and not a public, free or disposable provider
 - isDisposable: true if domain looks disposable/temporary
 - isRoleAccount: true if local looks like a role (e.g., support, updates, ceo)
 - isFreeProvider: true if domain is a common free provider (e.g., gmail.com)
@@ -109,10 +109,17 @@ console.log(isBusinessMail('name@company.com'));
 
 ## Method
 
-isBusinessMail() =>  Accept email of string type and return boolean
+isBusinessMail(email) =>  Returns boolean. Case-insensitive, ignores surrounding whitespace, never throws; returns false for invalid input.
 
 analyzeEmail(email, options?) =>  Returns a rich object with detailed flags  
 - options.additionalRoleLocalParts?: string[]
+
+## Development
+
+```bash
+npm install
+npm test   # builds and runs the test suite
+```
 
 ## Authors
 

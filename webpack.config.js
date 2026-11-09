@@ -8,6 +8,9 @@ module.exports = {
     filename: 'is-business-mail.js',
     libraryTarget: 'commonjs'
   },
+  performance: {
+    hints: false
+  },
   resolve: {
     extensions: ['.ts', '.js','.d.ts']
   },
